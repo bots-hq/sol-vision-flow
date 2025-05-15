@@ -77,28 +77,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col w-full">
-      {/* Header with glassmorphism effect */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/70 border-b border-white/5 px-6 py-3">
+      {/* Header with glassmorphism effect - mobile optimized */}
+      <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/70 border-b border-white/5 px-3 sm:px-6 py-3">
         <div className="container mx-auto max-w-7xl">
           <div className="flex items-center justify-between">
-            <Logo />
+            <div className="flex-shrink-0">
+              <Logo />
+            </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <a 
                     href="https://x.com/solwebsolana" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-white/5"
+                    className="text-muted-foreground hover:text-foreground transition-colors p-1.5 sm:p-2 rounded-full hover:bg-white/5"
+                    aria-label="Follow on X (Twitter)"
                   >
                     <svg 
-                      width="20" 
-                      height="20" 
+                      width="18" 
+                      height="18" 
                       viewBox="0 0 24 24" 
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
+                      className="h-4 w-4 sm:h-5 sm:w-5"
                     >
                       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
@@ -121,20 +124,20 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero section */}
-      <section className="w-full px-6 py-16 md:py-24 relative overflow-hidden">
+      {/* Hero section - mobile optimized */}
+      <section className="w-full px-3 sm:px-6 py-10 sm:py-16 md:py-24 relative overflow-hidden">
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge variant="outline" className="mb-4 py-1 px-4 border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
+            <Badge variant="outline" className="mb-4 py-1 px-3 sm:px-4 border-white/10 bg-white/5 backdrop-blur-sm">
               Solana Explorer
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight">
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-solana via-solana-accent to-solana-secondary">
                 Visualize &amp; Analyze
               </span>
               <span className="text-foreground">Solana Wallet Networks</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Explore wallet connections and transaction flows with our interactive visualization tool
             </p>
           </div>
@@ -151,16 +154,16 @@ const Index = () => {
         walletAddress={connectedWallet || undefined}
       />
 
-      {/* Main Content */}
-      <main className="flex-1 w-full px-6 pb-24">
+      {/* Main Content - mobile optimized */}
+      <main className="flex-1 w-full px-3 sm:px-6 pb-16 sm:pb-24">
         <div className="container mx-auto max-w-7xl">
           {walletData && networkData ? (
-            <div className="animate-fade-in space-y-8">
+            <div className="animate-fade-in space-y-6 sm:space-y-8">
               <WalletSummary data={walletData} />
               
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                <div className="lg:col-span-3 glass-panel border border-white/10 rounded-xl p-4 backdrop-blur-md">
-                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="lg:col-span-3 glass-panel border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-md">
+                  <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center gap-2">
                     <span className="inline-block w-2 h-2 bg-solana rounded-full"></span>
                     Network Visualization
                   </h2>
@@ -169,8 +172,8 @@ const Index = () => {
                     onNodeClick={handleNodeClick}
                   />
                 </div>
-                <div className="glass-panel border border-white/10 rounded-xl p-4 backdrop-blur-md">
-                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <div className="glass-panel border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-md">
+                  <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center gap-2">
                     <span className="inline-block w-2 h-2 bg-solana-accent rounded-full"></span>
                     Transaction Details
                   </h2>
@@ -182,11 +185,11 @@ const Index = () => {
               </div>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 glass-panel mt-8 rounded-xl border border-white/10 backdrop-blur-md">
-              <div className="relative w-24 h-24 mb-6">
+            <div className="flex flex-col items-center justify-center py-16 sm:py-20 glass-panel mt-6 sm:mt-8 rounded-xl border border-white/10 backdrop-blur-md">
+              <div className="relative w-20 sm:w-24 h-20 sm:h-24 mb-5 sm:mb-6">
                 <div className="absolute inset-0 rounded-full bg-solana/10 animate-pulse-glow"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.7 311.7" className="w-12 h-12">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.7 311.7" className="w-10 h-10 sm:w-12 sm:h-12">
                     <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="360.8791" y1="351.4553" x2="141.213" y2="-69.2936">
                       <stop offset="0" stopColor="#00FFA3"/>
                       <stop offset="1" stopColor="#DC1FFF"/>
@@ -208,10 +211,10 @@ const Index = () => {
                   </svg>
                 </div>
               </div>
-              <h2 className="text-2xl font-medium text-foreground text-center">
+              <h2 className="text-xl sm:text-2xl font-medium text-foreground text-center">
                 {error ? "Error loading wallet data" : "Enter a Solana wallet address"}
               </h2>
-              <p className="text-muted-foreground mt-2 text-center max-w-md">
+              <p className="text-sm sm:text-base text-muted-foreground mt-2 text-center max-w-md px-4">
                 {error ? error : "Discover wallet connections and transaction patterns"}
               </p>
             </div>
@@ -219,18 +222,18 @@ const Index = () => {
         </div>
       </main>
       
-      {/* Footer */}
-      <footer className="w-full px-6 py-8 border-t border-white/5 backdrop-blur-sm bg-black/20">
+      {/* Footer - mobile optimized */}
+      <footer className="w-full px-3 sm:px-6 py-6 sm:py-8 border-t border-white/5 backdrop-blur-sm bg-black/20">
         <div className="container mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Logo />
             </div>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 md:gap-4 text-xs sm:text-sm text-muted-foreground">
               <span>© {new Date().getFullYear()} SolWeb</span>
-              <div className="w-1 h-1 rounded-full bg-muted-foreground/30"></div>
+              <div className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/30"></div>
               <span>Built with React + TailwindCSS</span>
-              <div className="w-1 h-1 rounded-full bg-muted-foreground/30"></div>
+              <div className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground/30"></div>
               <span>Powered by Solana</span>
             </div>
           </div>
