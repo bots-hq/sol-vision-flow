@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { WalletData, NetworkData, NetworkNode, fetchWalletData, generateNetworkData } from '@/lib/solanaApi';
 import WalletSearch from '@/components/WalletSearch';
@@ -86,7 +87,7 @@ const Index = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <a 
-                    href="https://twitter.com/SolWeb" 
+                    href="https://x.com/solwebsolana" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-white/5"
