@@ -10,7 +10,7 @@ import WalletConnectButton from '@/components/WalletConnectButton';
 import Logo from '@/components/Logo';
 import { toast } from 'sonner';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Twitter } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useWalletData } from '@/hooks/useWalletData';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -92,12 +92,16 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-white/5"
                   >
-                    <Twitter className="h-5 w-5" />
-                    <span className="sr-only">Twitter</span>
+                    <img 
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png" 
+                      alt="X (Twitter)"
+                      className="h-5 w-5"
+                    />
+                    <span className="sr-only">X (formerly Twitter)</span>
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Follow on Twitter</p>
+                  <p>Follow on X (Twitter)</p>
                 </TooltipContent>
               </Tooltip>
               
