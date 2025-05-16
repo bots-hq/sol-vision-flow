@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,25 +7,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 266 100% 64%;
+    --background: 210 50% 10%;
+    --foreground: 210 10% 98%;
+    --card: 210 50% 10%;
+    --card-foreground: 210 10% 98%;
+    --popover: 210 50% 10%;
+    --popover-foreground: 210 10% 98%;
+    --primary: 196 80% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 210 40% 20%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 182 100% 50%;
+    --muted: 210 40% 20%;
+    --muted-foreground: 210 20% 70%;
+    --accent: 196 80% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 266 100% 64%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 196 80% 50%;
     --radius: 0.75rem;
   }
 
@@ -38,16 +38,12 @@
     font-family: 'Inter', sans-serif;
   }
 
-  .font-mono {
-    font-family: 'Space Mono', monospace;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .glass-panel {
     @apply bg-black/30 border border-white/10 backdrop-blur-md rounded-xl shadow-lg;
-  }
-
-  .glass-button {
-    @apply bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 rounded-lg transition-all duration-300;
   }
 }
 
@@ -71,7 +67,7 @@
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -86,4 +82,35 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.5; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }

@@ -53,20 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				cyan: {
+				  400: '#22d3ee',
+				  500: '#06b6d4'
 				},
-				solana: {
-					DEFAULT: '#9945FF',
-					accent: '#14F195',
-					secondary: '#03E1FF',
+				blue: {
+				  400: '#38bdf8',
+				  500: '#0ea5e9'
 				}
 			},
 			borderRadius: {
